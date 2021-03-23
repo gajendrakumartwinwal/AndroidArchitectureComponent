@@ -1,6 +1,8 @@
 package com.arch.app.views
 
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -41,6 +43,7 @@ class HomeFragment : Fragment() {
         subscribeUi()
 
         feedViewModel.fetchData()
+        Handler(Looper.getMainLooper()).postDelayed(Runnable { feedViewModel.fetchData() }, 10000)
     }
 
     fun subscribeUi() {

@@ -6,7 +6,7 @@ import androidx.room.PrimaryKey
 
 @Entity(tableName = "feed")
 data class FeedItem(
-    @PrimaryKey(autoGenerate = true)
-    val uid: Int,
+    @PrimaryKey
+    val id: Int,
     @ColumnInfo(name = "first_name") val name: String?
 )
